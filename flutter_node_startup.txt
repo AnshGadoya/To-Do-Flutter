@@ -1,0 +1,7 @@
+- npm init (if you want to write the package name write it and enter - enter -enter           till package.json not make)
+- npm install express mongoose body-parser bcrypt jsonwebtoken nodemon
+- create file index.js, app.js
+- in app.js :-
+	- const express = require('express');
+	  const app = express();
+	  module.exports = app;
