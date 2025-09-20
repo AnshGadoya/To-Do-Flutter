@@ -22,24 +22,26 @@ class _RegistrationState extends State<Registration> {
   TextEditingController passwordController = TextEditingController();
   bool _isNotValidate = false;
 
-  Future<void> registerUser() async {
+  void registerUser() async {
     if(emailController.text.isNotEmpty && passwordController.text.isNotEmpty){
-
+    print("object1");
       var reqBody = {
         "email": emailController.text,
         "password": passwordController.text,
       };
+    print("object2");
 
       var response = await http.post(
           Uri.parse(registration),
         headers: {"Content-type":"application/json"},
         body: jsonEncode(reqBody),
       );
+    print("object3");
 
       print("response  ${response.body}");
 
       if(response.statusCode == 200){
-        Get.to(SignInPage());
+        Get.to(()=>SignInPage());
       }else{
         Get.snackbar("Error", "Something went wrong");
       }
@@ -121,7 +123,10 @@ class _RegistrationState extends State<Registration> {
                   ),
                   HStack([
                     GestureDetector(
-                      onTap: ()=>{ registerUser() },
+                      onTap: ()=>{
+                        print("Click register"),
+                        registerUser()
+                      },
                       child: VxBox(
                           child: "Register".text.white.makeCentered().p16()
                       ).green600.roundedLg.make().px16().py16(),

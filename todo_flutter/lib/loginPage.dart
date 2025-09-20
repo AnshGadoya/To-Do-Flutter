@@ -142,7 +142,7 @@ class _SignInPageState extends State<SignInPage> {
         ),
         bottomNavigationBar: GestureDetector(
           onTap: () {
-            Get.to(Registration());
+            Get.to(()=>Registration());
           },
           child: Container(
             height: 25,

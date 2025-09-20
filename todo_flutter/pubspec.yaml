@@ -40,6 +40,12 @@ dependencies:
   shared_preferences: ^2.5.3
   jwt_decoder: ^2.0.1
   flutter_slidable: ^4.0.1
+  flutter_launcher_icons: ^0.14.4
+flutter_icons:
+  image_path: "assets/icons/logo.png"
+  android: true
+  ios: true
+
 
 dev_dependencies:
   flutter_test:

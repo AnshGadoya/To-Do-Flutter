@@ -5,6 +5,7 @@ class UserServie{
     static async registerUser(email, password){
         try {
             const createUser= new userModel({email, password});
+            console.log('User registered successfully');
             return await createUser.save();
         } catch (error) {
             throw error; 

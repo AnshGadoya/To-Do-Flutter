@@ -14,10 +14,11 @@ const todoSchema = new Schema({
         required: true,
     },
     desc:{
-         type:String,
+        type:String,
         required: true,
     }
-});
+},{timestamps:true});   
+
 
 const ToDoModel = db.model('todo', todoSchema);
 
